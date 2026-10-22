@@ -22,9 +22,7 @@ import {
   Plus,
   ShieldCheck,
   ShoppingBag,
-  Sparkles,
   Sunrise,
-  Truck,
   X,
 } from 'lucide-react';
 import type { LucideIcon } from 'lucide-react';
@@ -202,7 +200,8 @@ function App() {
 
   return (
     <div className="site-shell">
-      <header className="navbar">
+      <header className="nav-shell">
+        <div className="navbar">
         <a className="brand" href="#inicio" aria-label="Antônia Decoração - O Mundo Das Surpresas">
           <span className="brand-letter">A</span>
           <span className="brand-name">Antônia Decoração<small>O Mundo Das Surpresas</small></span>
@@ -217,6 +216,7 @@ function App() {
           <span>O meu cesto</span>
           <span className="cart-count" data-testid="text-cart-count">{cartCount}</span>
         </button>
+        </div>
       </header>
 
       <main id="inicio">
@@ -298,12 +298,10 @@ function App() {
             <p>Conte-nos a vossa história. A surpresa começa muito antes de chegar às mãos de quem ama.</p>
           </div>
           <div className="promise-item">
-            <div className="promise-icon"><Sparkles size={21} strokeWidth={1.5} /></div>
             <h3>Um toque pessoal</h3>
             <p>Escreva a sua mensagem e diga-nos o que torna esta ocasião especial. Cada pedido tem o seu próprio cuidado.</p>
           </div>
           <div className="promise-item">
-            <div className="promise-icon"><Truck size={21} strokeWidth={1.5} /></div>
             <h3>Combinado consigo</h3>
             <p>Recebemos o seu pedido e falamos consigo para confirmar os detalhes, a data e a melhor forma de surpreender.</p>
           </div>

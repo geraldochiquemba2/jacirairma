@@ -96,7 +96,8 @@ body { min-width: 320px; }
 
 .site-shell { overflow: clip; }
 .topline { background: #542934; color: #f7ece4; text-align: center; font-size: 11px; letter-spacing: .12em; padding: 9px 16px; text-transform: uppercase; }
-.navbar { height: 82px; display: flex; align-items: center; justify-content: space-between; max-width: 1280px; margin: auto; padding: 0 48px; position: sticky; top: 0; z-index: 10; background: #f9f2e7; box-shadow: 0 0 0 100vmax #f9f2e7; clip-path: inset(0 -100vmax); }
+.nav-shell { position: sticky; top: 0; z-index: 10; background: #f9f2e7; }
+.navbar { height: 82px; display: flex; align-items: center; justify-content: space-between; max-width: 1280px; margin: auto; padding: 0 48px; }
 .brand { display: flex; align-items: center; gap: 11px; color: #592b37; text-decoration: none; }
 .brand-mark { width: 38px; height: 38px; border: 1px solid #9c6570; border-radius: 50%; display: grid; place-items: center; color: #8d4b5b; }
 .brand-letter { font: italic 500 56px/1 var(--app-font-serif); color: #632e3c; letter-spacing: -.04em; }
