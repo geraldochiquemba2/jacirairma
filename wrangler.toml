@@ -1,0 +1,46 @@
+# ============================================================================
+# Antônia Decoração — Cloudflare Pages (wrangler.toml)
+#
+# AVISO IMPORTANTE — SEGREDOS
+# ---------------------------------------------------------------------------
+# Este ficheiro é versionado no Git. Os valores em [vars] ficam visíveis para
+# quem tiver acesso ao repositório. Use-os APENAS como valores de exemplo.
+#
+#   Valores públicos (sem risco)  -> podem ficar em [vars]
+#   Valores privados (segredos)   -> defina-os com:
+#       npx wrangler pages secret put <NOME>      (projeto Pages)
+#       npx wrangler secret put <NOME>            (Worker alternativo)
+#
+# Segredos obrigatórios:
+#   ADMIN_SECRET       -> chave HMAC usada para assinar os tokens de sessão
+#   TELEGRAM_BOT_TOKEN -> token do bot do Telegram
+#   TELEGRAM_CHAT_ID   -> id do chat/canal de destino no Telegram
+#   ADMIN_SENHA        -> palavra-passe do painel de administração
+# ============================================================================
+
+name = "antoniadecoracao"
+compatibility_date = "2026-10-21"
+
+# O site é estático e vive na raiz do repositório (index.html, css/, js/,
+# assets/, functions/...). Não existe pasta de build separada.
+pages_build_output_dir = "."
+
+# ---------------------------------------------------------------------------
+# Variáveis de ambiente
+# ---------------------------------------------------------------------------
+# ATENÇÃO: ADMIN_SENHA, TELEGRAM_BOT_TOKEN e TELEGRAM_API_BASE são placeholders.
+# Em produção, defina-os como segredos (ver comandos acima) e apague os
+# valores reais deste ficheiro.
+[vars]
+ADMIN_LOGIN = "999999999"
+TELEGRAM_API_BASE = "https://api.telegram.org"
+
+# ---------------------------------------------------------------------------
+# Workers KV — armazenamento dos dados do painel de administração
+# ---------------------------------------------------------------------------
+# Troque o id abaixo pelo ID real do namespace (ver DEPLOY.md, passo 2):
+#   npx wrangler kv namespace create ADMIN_DATA
+#   npx wrangler kv namespace list
+[[kv_namespaces]]
+binding = "ADMIN_DATA"
+id = "91fc8b0df4a24bd48040bc651a185b8c"

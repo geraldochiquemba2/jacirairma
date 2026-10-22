@@ -1,0 +1,845 @@
+/* Painel de Administração - Antônia Decoração
+   Tema escuro com acento dourado (#e8b64c) */
+
+[hidden] {
+	display: none !important;
+}
+
+html,
+body.admin-corpo {
+	min-height: 100%;
+}
+
+body.admin-corpo {
+	margin: 0;
+	padding: 0;
+	font-family: 'Josefin Sans', sans-serif;
+	font-size: 16px;
+	color: #f2efe9;
+	background-color: #0b0906;
+	background-image: linear-gradient(rgba(0, 0, 0, 0.88), rgba(0, 0, 0, 0.94)), url('../assets/poster.jpg');
+	background-size: cover;
+	background-position: center center;
+	background-attachment: fixed;
+	-webkit-font-smoothing: antialiased;
+}
+
+body.admin-corpo a {
+	color: #e8b64c;
+	text-decoration: none;
+}
+
+body.admin-corpo a:hover,
+body.admin-corpo a:focus {
+	color: #f4d68f;
+	text-decoration: none;
+}
+
+/* ---------- Estrutura ---------- */
+
+.admin-ecra {
+	width: 100%;
+	max-width: 1440px;
+	margin: 0 auto;
+	padding: 24px 18px 60px;
+}
+
+.admin-login {
+	min-height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 40px 18px;
+}
+
+.admin-login-painel {
+	width: 100%;
+	max-width: 420px;
+	margin: 0 auto;
+	text-align: center;
+}
+
+.admin-conteudo {
+	margin-top: 22px;
+}
+
+.admin-grelha {
+	display: flex;
+	gap: 22px;
+	align-items: flex-start;
+}
+
+.admin-coluna {
+	min-width: 0;
+}
+
+.admin-coluna-lista {
+	flex: 1 1 62%;
+}
+
+.admin-coluna-form {
+	flex: 0 0 350px;
+}
+
+.admin-noscript {
+	max-width: 700px;
+	margin: 20px auto;
+	text-align: center;
+}
+
+.admin-voltar {
+	position: fixed;
+	top: 14px;
+	left: 16px;
+	z-index: 60;
+	font-size: 0.85em;
+	text-transform: uppercase;
+	letter-spacing: 0.5px;
+	color: #e8b64c;
+	padding: 6px 12px;
+	border: 1px solid rgba(232, 182, 76, 0.3);
+	border-radius: 3px;
+	background: rgba(0, 0, 0, 0.45);
+}
+
+.admin-voltar:hover {
+	background: rgba(232, 182, 76, 0.14);
+	color: #f4d68f;
+}
+
+/* ---------- Painéis ---------- */
+
+.admin-painel {
+	background: rgba(0, 0, 0, 0.38);
+	border: 1px solid rgba(232, 182, 76, 0.35);
+	border-radius: 3px;
+	padding: 22px 24px;
+	margin-bottom: 22px;
+	backdrop-filter: blur(2px);
+	-webkit-backdrop-filter: blur(2px);
+}
+
+.admin-painel-titulo {
+	font-family: 'Cinzel', Georgia, serif;
+	font-size: 1.05em;
+	font-weight: 700;
+	color: #e8b64c;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	margin: 0 0 6px;
+}
+
+.admin-painel-nota {
+	color: #b9b2a6;
+	font-size: 0.9em;
+	margin: 0 0 16px;
+}
+
+.admin-titulo-ecra {
+	font-family: 'Cinzel', Georgia, serif;
+	font-weight: 700;
+	font-size: 1.6em;
+	color: #e8b64c;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	margin: 0;
+	text-shadow: 2px 3px 8px rgba(0, 0, 0, 0.75);
+}
+
+.admin-subtitulo {
+	color: #cfc7b8;
+	font-size: 0.95em;
+	margin: 6px 0 0;
+	letter-spacing: 0.5px;
+}
+
+.admin-logo {
+	max-width: 190px;
+	height: auto;
+	display: block;
+	margin: 0 auto 18px;
+}
+
+.admin-logo-pequeno {
+	max-width: 76px;
+	margin: 0 14px 0 0;
+}
+
+.admin-aviso {
+	display: flex;
+	align-items: flex-start;
+	gap: 10px;
+	max-width: 1440px;
+	margin: 16px auto 0;
+	padding: 12px 16px;
+	background: rgba(232, 182, 76, 0.12);
+	border: 1px solid rgba(232, 182, 76, 0.45);
+	border-radius: 3px;
+	color: #f0dcae;
+	font-size: 0.92em;
+}
+
+.admin-aviso i {
+	font-size: 20px;
+	line-height: 1.2;
+	color: #e8b64c;
+}
+
+/* ---------- Cabeçalho ---------- */
+
+.admin-cabecalho {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 16px;
+	flex-wrap: wrap;
+	padding: 14px 20px;
+	margin-top: 18px;
+	background: rgba(0, 0, 0, 0.38);
+	border: 1px solid rgba(232, 182, 76, 0.35);
+	border-radius: 3px;
+}
+
+.admin-cabecalho-marca {
+	display: flex;
+	align-items: center;
+	min-width: 0;
+}
+
+/* ---------- Abas ---------- */
+
+.admin-abas {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 10px;
+	margin: 22px 0 6px;
+}
+
+.admin-aba {
+	background: rgba(0, 0, 0, 0.38);
+	border: 1px solid rgba(232, 182, 76, 0.3);
+	border-radius: 3px;
+	color: #ded7c9;
+	padding: 10px 18px;
+	font-family: 'Cinzel', Georgia, serif;
+	font-size: 0.82em;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	cursor: pointer;
+	transition: background 0.25s ease, border-color 0.25s ease, color 0.25s ease;
+}
+
+.admin-aba:hover,
+.admin-aba:focus {
+	background: rgba(232, 182, 76, 0.14);
+	border-color: rgba(232, 182, 76, 0.7);
+	color: #f4d68f;
+	outline: none;
+}
+
+.admin-aba.ativa {
+	background: #e8b64c;
+	border-color: #e8b64c;
+	color: #14110d;
+}
+
+.admin-aba.ativa:hover {
+	background: #f0c866;
+	color: #14110d;
+}
+
+.admin-aba-conta {
+	display: inline-block;
+	min-width: 22px;
+	margin-left: 8px;
+	padding: 1px 6px;
+	border-radius: 10px;
+	background: rgba(232, 182, 76, 0.18);
+	border: 1px solid rgba(232, 182, 76, 0.4);
+	font-family: 'Josefin Sans', sans-serif;
+	font-size: 0.85em;
+	color: #e8b64c;
+	text-align: center;
+}
+
+.admin-aba.ativa .admin-aba-conta {
+	background: rgba(20, 17, 13, 0.25);
+	border-color: rgba(20, 17, 13, 0.35);
+	color: #14110d;
+}
+
+/* ---------- Formulários ---------- */
+
+.admin-form {
+	margin: 0;
+}
+
+.admin-campo {
+	margin-bottom: 16px;
+}
+
+.admin-campo label {
+	display: block;
+	margin-bottom: 6px;
+	font-family: 'Cinzel', Georgia, serif;
+	font-size: 0.78em;
+	font-weight: 700;
+	text-transform: uppercase;
+	letter-spacing: 1.2px;
+	color: #e8b64c;
+}
+
+.admin-form input[type="text"],
+.admin-form input[type="password"],
+.admin-form input[type="number"],
+.admin-form input[type="file"],
+.admin-form select,
+.admin-form textarea {
+	width: 100%;
+	background: rgba(255, 255, 255, 0.05);
+	border: 1px solid rgba(232, 182, 76, 0.3);
+	border-radius: 3px;
+	color: #fff;
+	padding: 9px 12px;
+	font-family: 'Josefin Sans', sans-serif;
+	font-size: 0.98em;
+	line-height: 1.4;
+	transition: border-color 0.25s ease, background 0.25s ease;
+}
+
+.admin-form textarea {
+	resize: vertical;
+}
+
+.admin-form select {
+	appearance: none;
+	-webkit-appearance: none;
+	background-image: linear-gradient(45deg, transparent 50%, #e8b64c 50%), linear-gradient(135deg, #e8b64c 50%, transparent 50%);
+	background-position: calc(100% - 18px) 18px, calc(100% - 12px) 18px;
+	background-size: 6px 6px, 6px 6px;
+	background-repeat: no-repeat;
+	padding-right: 34px;
+}
+
+.admin-form select option {
+	background: #14110d;
+	color: #fff;
+}
+
+.admin-form input:focus,
+.admin-form select:focus,
+.admin-form textarea:focus {
+	outline: none;
+	border-color: #e8b64c;
+	background: rgba(232, 182, 76, 0.08);
+}
+
+.admin-form input[type="file"] {
+	padding: 7px 10px;
+	font-size: 0.85em;
+	color: #cfc7b8;
+}
+
+.admin-form input[type="file"]::file-selector-button {
+	background: transparent;
+	border: 1px solid rgba(232, 182, 76, 0.5);
+	border-radius: 3px;
+	color: #e8b64c;
+	padding: 5px 12px;
+	margin-right: 10px;
+	font-family: 'Cinzel', Georgia, serif;
+	font-size: 0.8em;
+	text-transform: uppercase;
+	letter-spacing: 0.5px;
+	cursor: pointer;
+}
+
+.admin-form input[type="file"]::file-selector-button:hover {
+	background: rgba(232, 182, 76, 0.15);
+}
+
+.admin-icone-linha {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+}
+
+.admin-icone-previa {
+	flex: 0 0 auto;
+	width: 42px;
+	height: 42px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background: rgba(232, 182, 76, 0.1);
+	border: 1px solid rgba(232, 182, 76, 0.35);
+	border-radius: 3px;
+}
+
+.admin-icone-previa i {
+	color: #e8b64c;
+	font-size: 22px;
+}
+
+.admin-nota {
+	color: #a9a296;
+	font-size: 0.82em;
+	margin: 6px 0 0;
+	line-height: 1.5;
+}
+
+.admin-botoes {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 10px;
+	margin-top: 6px;
+}
+
+/* ---------- Botões ---------- */
+
+.admin-btn {
+	display: inline-block;
+	padding: 9px 18px;
+	font-family: 'Cinzel', Georgia, serif;
+	font-size: 0.82em;
+	font-weight: 700;
+	text-transform: uppercase;
+	letter-spacing: 0.8px;
+	border-radius: 3px;
+	border: 1px solid rgba(232, 182, 76, 0.5);
+	background: transparent;
+	color: #e8b64c;
+	cursor: pointer;
+	transition: background 0.25s ease, border-color 0.25s ease, color 0.25s ease;
+}
+
+.admin-btn:hover,
+.admin-btn:focus {
+	background: rgba(232, 182, 76, 0.15);
+	border-color: #e8b64c;
+	color: #f4d68f;
+	outline: none;
+}
+
+.admin-btn-primario {
+	background: #e8b64c;
+	border-color: #e8b64c;
+	color: #14110d;
+}
+
+.admin-btn-primario:hover,
+.admin-btn-primario:focus {
+	background: #f0c866;
+	border-color: #f0c866;
+	color: #14110d;
+}
+
+.admin-btn-ghost {
+	border-color: rgba(255, 255, 255, 0.28);
+	color: #cfc7b8;
+}
+
+.admin-btn-ghost:hover,
+.admin-btn-ghost:focus {
+	border-color: rgba(255, 255, 255, 0.6);
+	background: rgba(255, 255, 255, 0.07);
+	color: #fff;
+}
+
+.admin-btn-largo {
+	width: 100%;
+	margin-top: 6px;
+}
+
+.admin-btn-sair {
+	flex: 0 0 auto;
+}
+
+.admin-btn[disabled] {
+	opacity: 0.5;
+	cursor: not-allowed;
+}
+
+.admin-btn[disabled]:hover {
+	background: transparent;
+	border-color: rgba(232, 182, 76, 0.5);
+	color: #e8b64c;
+}
+
+.admin-btn-primario[disabled]:hover {
+	background: #e8b64c;
+	color: #14110d;
+}
+
+/* ---------- Tabelas ---------- */
+
+.admin-tabela-wrap {
+	width: 100%;
+	overflow-x: auto;
+	-webkit-overflow-scrolling: touch;
+}
+
+.admin-tabela {
+	width: 100%;
+	border-collapse: collapse;
+	margin: 0;
+}
+
+.admin-tabela th {
+	font-family: 'Cinzel', Georgia, serif;
+	font-size: 0.72em;
+	font-weight: 700;
+	text-transform: uppercase;
+	letter-spacing: 1.2px;
+	color: #e8b64c;
+	text-align: left;
+	padding: 10px 8px;
+	border-bottom: 1px solid rgba(232, 182, 76, 0.3);
+	white-space: nowrap;
+}
+
+.admin-tabela td {
+	padding: 10px 8px;
+	border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+	vertical-align: middle;
+	color: #eae5db;
+	font-size: 0.95em;
+}
+
+.admin-tabela tbody tr:hover td {
+	background: rgba(232, 182, 76, 0.06);
+}
+
+.admin-col-estreita {
+	width: 62px;
+}
+
+.admin-col-acoes {
+	width: 150px;
+	text-align: right;
+}
+
+.admin-celula-pos {
+	color: #e8b64c;
+	font-family: 'Cinzel', Georgia, serif;
+	font-weight: 700;
+	width: 46px;
+}
+
+.admin-celula-icone i {
+	color: #e8b64c;
+	font-size: 22px;
+}
+
+.admin-celula-titulo {
+	color: #fff;
+	font-weight: 600;
+}
+
+.admin-celula-sub {
+	display: block;
+	color: #a9a296;
+	font-size: 0.85em;
+	font-weight: 300;
+}
+
+.admin-celula-acoes {
+	text-align: right;
+	white-space: nowrap;
+}
+
+.admin-miniatura {
+	display: block;
+	width: 78px;
+	height: 56px;
+	object-fit: cover;
+	border: 1px solid rgba(232, 182, 76, 0.3);
+	border-radius: 3px;
+	background: rgba(255, 255, 255, 0.04);
+}
+
+.admin-miniatura-vazia {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	color: #8d8578;
+	font-size: 0.85em;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+}
+
+.admin-chip {
+	display: inline-block;
+	margin-top: 5px;
+	padding: 1px 7px;
+	border-radius: 10px;
+	background: rgba(232, 182, 76, 0.15);
+	border: 1px solid rgba(232, 182, 76, 0.35);
+	color: #e8b64c;
+	font-size: 0.7em;
+	text-transform: uppercase;
+	letter-spacing: 0.8px;
+}
+
+.admin-btn-acc {
+	display: inline-block;
+	width: 32px;
+	height: 32px;
+	margin-left: 5px;
+	padding: 0;
+	background: transparent;
+	border: 1px solid rgba(232, 182, 76, 0.3);
+	border-radius: 3px;
+	color: #e8b64c;
+	cursor: pointer;
+	transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+
+.admin-btn-acc i {
+	font-size: 17px;
+	line-height: 1;
+	position: relative;
+	top: 1px;
+}
+
+.admin-btn-acc:hover {
+	background: rgba(232, 182, 76, 0.16);
+	border-color: #e8b64c;
+	color: #f4d68f;
+}
+
+.admin-btn-acc[disabled] {
+	opacity: 0.28;
+	cursor: not-allowed;
+}
+
+.admin-btn-acc[disabled]:hover {
+	background: transparent;
+	border-color: rgba(232, 182, 76, 0.3);
+	color: #e8b64c;
+}
+
+.admin-btn-perigo {
+	border-color: rgba(217, 83, 79, 0.45);
+	color: #e0837f;
+}
+
+.admin-btn-perigo:hover {
+	background: rgba(217, 83, 79, 0.18);
+	border-color: #d9534f;
+	color: #ffb3b0;
+}
+
+.admin-vazio {
+	color: #a9a296;
+	font-size: 0.92em;
+	margin: 14px 0 0;
+	padding: 14px;
+	text-align: center;
+	border: 1px dashed rgba(232, 182, 76, 0.25);
+	border-radius: 3px;
+}
+
+/* ---------- Pré-visualização de imagem ---------- */
+
+.admin-previa {
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	min-height: 110px;
+	padding: 8px;
+	background: rgba(255, 255, 255, 0.04);
+	border: 1px solid rgba(232, 182, 76, 0.25);
+	border-radius: 3px;
+}
+
+.admin-previa-img {
+	display: block;
+	max-width: 100%;
+	max-height: 190px;
+	border-radius: 3px;
+}
+
+.admin-previa-vazia {
+	color: #8d8578;
+	font-size: 0.85em;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+}
+
+/* ---------- Mensagens e toasts ---------- */
+
+.admin-msg {
+	padding: 10px 14px;
+	border-radius: 3px;
+	font-size: 0.9em;
+	line-height: 1.5;
+	margin-bottom: 14px;
+}
+
+.admin-msg-erro {
+	background: rgba(217, 83, 79, 0.15);
+	border: 1px solid rgba(217, 83, 79, 0.55);
+	color: #ffb3b0;
+}
+
+.admin-msg-ok {
+	background: rgba(232, 182, 76, 0.14);
+	border: 1px solid rgba(232, 182, 76, 0.5);
+	color: #f0dcae;
+}
+
+.admin-toasts {
+	position: fixed;
+	top: 16px;
+	right: 16px;
+	z-index: 9999;
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+	max-width: 330px;
+	pointer-events: none;
+}
+
+.admin-toast {
+	display: flex;
+	align-items: flex-start;
+	gap: 10px;
+	padding: 12px 16px;
+	background: rgba(20, 17, 13, 0.96);
+	border: 1px solid rgba(232, 182, 76, 0.5);
+	border-left: 3px solid #e8b64c;
+	border-radius: 3px;
+	color: #fff;
+	font-size: 0.92em;
+	line-height: 1.45;
+	box-shadow: 0 10px 30px rgba(0, 0, 0, 0.45);
+	animation: adminToastEntra 0.3s ease;
+}
+
+.admin-toast i {
+	color: #e8b64c;
+	font-size: 18px;
+	line-height: 1.2;
+}
+
+.admin-toast-erro {
+	border-color: rgba(217, 83, 79, 0.55);
+	border-left-color: #d9534f;
+}
+
+.admin-toast-erro i {
+	color: #e0837f;
+}
+
+.admin-toast.sair {
+	animation: adminToastSai 0.3s ease forwards;
+}
+
+@keyframes adminToastEntra {
+	from {
+		opacity: 0;
+		transform: translateX(24px);
+	}
+	to {
+		opacity: 1;
+		transform: translateX(0);
+	}
+}
+
+@keyframes adminToastSai {
+	from {
+		opacity: 1;
+		transform: translateX(0);
+	}
+	to {
+		opacity: 0;
+		transform: translateX(24px);
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.admin-toast,
+	.admin-toast.sair {
+		animation: none;
+	}
+}
+
+/* ---------- Responsivo ---------- */
+
+@media all and (max-width: 991px) {
+	.admin-grelha {
+		flex-direction: column;
+	}
+
+	.admin-coluna-lista,
+	.admin-coluna-form {
+		flex: 1 1 100%;
+		width: 100%;
+	}
+}
+
+@media all and (max-width: 600px) {
+	.admin-ecra {
+		padding: 18px 12px 48px;
+	}
+
+	.admin-cabecalho {
+		align-items: flex-start;
+		flex-direction: column;
+	}
+
+	.admin-cabecalho-marca {
+		align-items: flex-start;
+	}
+
+	.admin-logo-pequeno {
+		max-width: 56px;
+		margin: 0 12px 0 0;
+	}
+
+	.admin-titulo-ecra {
+		font-size: 1.25em;
+		letter-spacing: 1.5px;
+	}
+
+	.admin-painel {
+		padding: 18px 16px;
+	}
+
+	.admin-aba {
+		flex: 1 1 100%;
+		text-align: left;
+	}
+
+	.admin-tabela {
+		min-width: 540px;
+	}
+
+	.admin-toasts {
+		left: 12px;
+		right: 12px;
+		max-width: none;
+	}
+
+	.admin-voltar {
+		position: static;
+		display: inline-block;
+		margin: 12px 0 0 12px;
+	}
+}
+
+@media all and (max-width: 360px) {
+	.admin-titulo-ecra {
+		font-size: 1.1em;
+	}
+
+	.admin-botoes {
+		flex-direction: column;
+	}
+
+	.admin-botoes .admin-btn {
+		width: 100%;
+	}
+}

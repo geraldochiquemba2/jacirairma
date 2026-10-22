@@ -1,0 +1,20 @@
+# Antônia Decoração — Cloudflare Pages
+# Regras de redirecionamento. Sem SPA: cada página é um ficheiro HTML próprio.
+#
+# IMPORTANTE: as rotas /api/* NÃO são aquitreatadas. As Pages Functions
+# (functions/api/...) tratam dessas rotas e o Cloudflare Pages nunca aplica
+# estas regras a pedidos servidos por Functions. Não adicionar regras
+# "/api/*" nem um "/*  /index.html  200" genérico, ou a API passaria a
+# devolver a página inicial em vez de JSON.
+
+/index.html   /              301
+/inicio       /index.html    301
+/home         /index.html    301
+/explorar     /explorar.html 301
+/explorar/    /explorar.html 301
+/sobre        /sobre.html    301
+/sobre-nos    /sobre.html    301
+/contato      /contacto.html 301
+/contactos    /contacto.html 301
+/admin        /admin.html    301
+/painel       /admin.html    301
