@@ -1,6 +1,0 @@
-============================================================
-2026-10-21 15:25:48
-Nome: Teste
-Email: teste@exemplo.com
-
-Mensagem de teste

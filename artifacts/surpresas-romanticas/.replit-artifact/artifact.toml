@@ -1,0 +1,28 @@
+kind = "web"
+previewPath = "/"
+title = "Surpresas Românticas"
+description = "Loja online em português para descobrir, personalizar e encomendar experiências e presentes românticos."
+version = "1.0.0"
+id = "artifacts/surpresas-romanticas"
+router = "path"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 26017
+
+[services.development]
+run = "pnpm --filter @workspace/surpresas-romanticas run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/surpresas-romanticas", "run", "build" ]
+serve = "static"
+publicDir = "artifacts/surpresas-romanticas/dist/public"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "26017"
+BASE_PATH = "/"
