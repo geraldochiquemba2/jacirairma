@@ -265,6 +265,7 @@ function App() {
               </button>
             ))}
           </div>
+          <p className="category-hint">Deslize para ver mais →</p>
           <div className="product-grid" aria-live="polite">
             {visibleProducts.map((product) => {
               const Icon = product.icon;
